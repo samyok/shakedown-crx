@@ -3,3 +3,9 @@
 // if bad then show bad screen
 
 // if good then show good screen
+
+fetch("https://server.shakedown.tech/compare?url=" + location.href).then(r => r.json()).then(r => {
+    if (r.alert) {
+        alert("bad wesbite");
+    }
+})
