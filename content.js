@@ -9,3 +9,20 @@ fetch("https://server.shakedown.tech/compare?url=" + location.href).then(r => r.
         alert("bad wesbite");
     }
 })
+
+fetch("https://server.shakedown.tech/scamtest?url=" + location.href).then(r => r.json()).then(r => {
+    if (r.alert) {
+        alert("scummy website sometimes");
+    }
+});
+
+
+setInterval(() => {
+    if (location.href.includes(".gov/")) return;
+    Array.from(document.querySelectorAll("input")).filter((input) => {
+        if (input.value.match(/^(?!666|000|9\d{2})\d{3}-(?!00)\d{2}-(?!0{4})\d{4}$/)) {
+            input.value = "";
+            alert("why tf ssn");
+        }
+    })
+}, 1000)
