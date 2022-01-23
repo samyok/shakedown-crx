@@ -5,6 +5,9 @@
   "background": {
     "service_worker": "background.js"
   },
+  "icons": {
+    "128": "logo_square.png"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -15,6 +18,8 @@
         "content.js"
       ]
     }
+  ],
+  "web_accessible_resources": [
   ],
   "action": {}
 }
